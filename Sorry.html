@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Negan's Site 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background elements */
+        .flower {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .flower:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .flower:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+        .flower:nth-child(3) { top: 60%; left: 5%; animation-delay: 2s; }
+        .flower:nth-child(4) { top: 70%; right: 10%; animation-delay: 3s; }
+        .flower:nth-child(5) { top: 40%; left: 20%; animation-delay: 4s; }
+        .flower:nth-child(6) { top: 30%; right: 30%; animation-delay: 5s; }
+        .flower:nth-child(7) { top: 15%; left: 70%; animation-delay: 1.5s; }
+        .flower:nth-child(8) { top: 80%; left: 30%; animation-delay: 2.5s; }
+        .flower:nth-child(9) { top: 50%; right: 5%; animation-delay: 3.5s; }
+        .flower:nth-child(10) { top: 25%; left: 40%; animation-delay: 4.5s; }
+
+        .star {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: twinkle 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        .star:nth-child(11) { top: 5%; left: 20%; animation-delay: 0s; }
+        .star:nth-child(12) { top: 12%; right: 25%; animation-delay: 0.5s; }
+        .star:nth-child(13) { top: 35%; left: 8%; animation-delay: 1s; }
+        .star:nth-child(14) { top: 45%; right: 8%; animation-delay: 1.5s; }
+        .star:nth-child(15) { top: 65%; left: 25%; animation-delay: 2s; }
+        .star:nth-child(16) { top: 75%; right: 20%; animation-delay: 2.5s; }
+        .star:nth-child(17) { top: 85%; left: 60%; animation-delay: 3s; }
+        .star:nth-child(18) { top: 55%; left: 80%; animation-delay: 3.5s; }
+
+        .sun {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-size: 4rem;
+            animation: rotate 10s linear infinite;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        .heart:nth-child(19) { top: 15%; left: 50%; animation-delay: 0.5s; }
+        .heart:nth-child(20) { top: 25%; left: 60%; animation-delay: 1.5s; }
+        .heart:nth-child(21) { top: 35%; left: 45%; animation-delay: 2.5s; }
+        .heart:nth-child(22) { top: 45%; left: 55%; animation-delay: 3.5s; }
+        .heart:nth-child(23) { top: 55%; left: 35%; animation-delay: 4s; }
+        .heart:nth-child(24) { top: 65%; left: 65%; animation-delay: 4.5s; }
+        .heart:nth-child(25) { top: 75%; left: 50%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .welcome-title {
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 20px #ff6b6b; }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 30px #ff6b6b, 0 0 40px #ff6b6b; }
+        }
+
+        .make-happy-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .make-happy-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #ff5252, #ff7979);
+        }
+
+        .letter-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letter-content {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .letter-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 30px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .open-btn {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .question-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .question-content {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .question-text {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .answer-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            min-width: 100px;
+        }
+
+        .answer-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .congrats-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1002;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .congrats-content {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .congrats-text {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .croissant-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1003;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .croissant-content {
+            background: linear-gradient(135deg, #ffd89b, #19547b);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .croissant {
+            font-size: 8rem;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .croissant.bite-1 { transform: scale(0.9) rotate(-5deg); }
+        .croissant.bite-2 { transform: scale(0.8) rotate(5deg); }
+        .croissant.bite-3 { transform: scale(0.7) rotate(-3deg); }
+        .croissant.bite-4 { transform: scale(0.6) rotate(2deg); opacity: 0.7; }
+
+        .eat-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .eat-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .flower-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1004;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flower-content {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .lily {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: block;
+            animation: sway 2s ease-in-out infinite;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .kiss-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1005;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kiss-content {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .lips {
+            font-size: 8rem;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .lips.kissing {
+            animation: kiss 0.8s ease-in-out;
+        }
+
+        @keyframes kiss {
+            0% { transform: scale(1) translateX(0); }
+            25% { transform: scale(1.3) translateX(-10px); }
+            50% { transform: scale(1.2) translateX(10px); }
+            75% { transform: scale(1.3) translateX(-5px); }
+            100% { transform: scale(1) translateX(0); }
+        }
+
+        .kiss-btn {
+            background: linear-gradient(45deg, #ff1744, #ff5722);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .kiss-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .hug-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1006;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hug-content {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .hug-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .hug-character {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .hug-character.left {
+            margin-right: -20px;
+            z-index: 2;
+        }
+
+        .hug-character.right {
+            margin-left: -20px;
+            z-index: 1;
+        }
+
+        .hug-container:hover .hug-character {
+            transform: scale(1.05);
+        }
+
+        .hug-hearts {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .placeholder-character {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .hug-btn {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .hug-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .welcome-title {
+                font-size: 2rem;
+                padding: 0 10px;
+            }
+            
+            .make-happy-btn {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+            
+            .letter-content, .question-content, .congrats-content, 
+            .croissant-content, .flower-content, .kiss-content, .hug-content {
+                padding: 20px;
+                margin: 10px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .letter-text {
+                font-size: 1rem;
+                max-height: 50vh;
+            }
+
+            /* Hide some background elements on mobile to reduce clutter */
+            .flower:nth-child(3),
+            .flower:nth-child(5),
+            .flower:nth-child(7),
+            .flower:nth-child(9) {
+                display: none;
+            }
+
+            .star:nth-child(13),
+            .star:nth-child(15),
+            .star:nth-child(17) {
+                display: none;
+            }
+
+            .heart:nth-child(21),
+            .heart:nth-child(23),
+            .heart:nth-child(25) {
+                display: none;
+            }
+
+            .sun {
+                font-size: 3rem;
+            }
+
+            .croissant {
+                font-size: 5rem;
+            }
+
+            .lips {
+                font-size: 5rem;
+            }
+
+            .lily {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hug-character, .placeholder-character {
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+            }
+
+            .question-text {
+                font-size: 1.3rem;
+            }
+
+            .congrats-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background elements -->
+    <div class="flower">🌸</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌻</div>
+    <div class="flower">🌷</div>
+    <div class="flower">🌹</div>
+    <div class="flower">🌼</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌸</div>
+    <div class="flower">🌻</div>
+    <div class="flower">🌷</div>
+    <div class="star">⭐</div>
+    <div class="star">✨</div>
+    <div class="star">⭐</div>
+    <div class="star">✨</div>
+    <div class="star">⭐</div>
+    <div class="star">✨</div>
+    <div class="star">⭐</div>
+    <div class="star">✨</div>
+    <div class="sun">☀️</div>
+    <div class="heart">💕</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+    <div class="heart">💕</div>
+    <div class="heart">💖</div>
+    <div class="heart">💗</div>
+
+    <div class="container">
+        <h1 class="welcome-title">Neganın Saytına Xoş Gəlmisiniz 💕<br>Şirin Cupcake-imə 🧁</h1>
+        <button class="make-happy-btn" onclick="showLetter()">Mutlu olmaq istəyirsən?💖</button>
+    </div>
+
+    <!-- Letter Modal -->
+    <div class="letter-modal" id="letterModal">
+        <div class="letter-content">
+            <h2>💌 A Letter for You 💌</h2>
+            <div class="letter-text" id="letterText">
+                Mənim biricik sevgilimə,<br><br>
+                Aşkım Səni üzdüyümü bilirəm. Məniynən danışmırsan, heç yazdıqlarımada cavab vermirsen. Hak eliyrəm 
+                səni üzdüyüm üçün bağışla məni. Mən səni çox sevirəm. Səni mutlu eləmək üçün her şeyi edərəm.
+                Üzündəki gülüsəmə çox qəşəngdi. Sənin gülüsəmən mənidə mutlu edir. Sadəcə, Səniynən birlikdə olduğum vaxtdan 
+                həyatım çox dəyişdi. Əvvəllər aynaya baxanda sevmediyim insan dəy yoxdu məni dəyişdin. Dünyaya özümə
+                 qarşı olan baxış açımı dəyişdin. Özümdə sevmədiyim her şeyi sen məndə sevdin. Özümü yetərli deyiləm deye 
+                 düşünürdüm, kim severki məni deyirdim. Ama sen bunu dəyişdin, meni yetərli olduğuma inandırdın. Məni 
+                 olduğum kimi sevdin. Mənimdə sevilə biləcəyimi göstərdin. Çox da qəşəng sevirsən məni.Məndə seni elə
+                 sevmək istəyirəm, səni sən istədiyin kimi sevmək, bunun üçün əlimdən gələni edəcəm mutlu olmaığın üçün 
+                 her şeyi edəcəm. Yanında çox rahat oluram özümü aid olduğum yerdə hiss eliyrəm.  Səniynən ən balaca şeylər 
+                 belə məni çox mutlu eliyir. Sən çox qəşəngsən, ən qəşəngi. Mən səni istəyirəm. Necə dünya günəşin ətrafinda
+                 fırlanırsa, səndə mənim günəşimsən məndə sənin ətrafında fırlanacam. <br>
+                 Səni hər şeydən çox sevən Neganın 💕
+            </div>
+            <button class="open-btn" onclick="openLetter()">Məktubu bağla 💌</button>
+        </div>
+    </div>
+
+    <!-- Question Modal -->
+    <div class="question-modal" id="questionModal">
+        <div class="question-content">
+            <div class="question-text">Hələdə üzgünsən, 😔</div>
+            <button class="answer-btn" onclick="answerNo()">Yox 😊</button>
+            <button class="answer-btn" onclick="answerYes()">Hə 😔</button>
+        </div>
+    </div>
+
+    <!-- Congratulations Modal -->
+    <div class="congrats-modal" id="congratsModal">
+        <div class="congrats-content">
+            <div class="congrats-text">🎉 Nəə Qəşəngg! 🎉</div>
+            <p style="color: white; font-size: 1.2rem;"> Ümid eliyrəm aşkım azda olsa Səni mutluu eləyə bildim.Sənin mutluluğun mənim üçün hər şeydi aşkımm. Səni üzdüyüm üçün bağışla məni. Üzündən gülümsəmə heç vaxt əksikk olmasınn. Çox qəşəng gülürsən😊💕Və unutmaa<br>You are sweattt<br>Like a Cupcakeee🧁</p>
+            <button class="open-btn" onclick="closeCongrats()">Close</button>
+        </div>
+    </div>
+
+    <!-- Croissant Modal -->
+    <div class="croissant-modal" id="croissantModal">
+        <div class="croissant-content">
+            <h2>🍫 Aşkıma şokoladlı krusann 🍫</h2>
+            <div class="croissant" id="croissant">🥐</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="croissantProgress"></div>
+            </div>
+            <p id="croissantText">Kruvasanın dadını çıxarmaq üçün butona bas(4 dəfə)</p>
+            <button class="eat-btn" onclick="eatCroissant()" id="eatBtn">Ye 🍽️</button>
+        </div>
+    </div>
+
+    <!-- Flower Modal -->
+    <div class="flower-modal" id="flowerModal">
+        <div class="flower-content">
+            <h2>🌺 Aşkım üçün güll 🌺</h2>
+            <img src="https://www.michlers.com/cdn/shop/products/Lilies_Michlers2.jpg?w=400&h=400&fit=crop&crop=center" alt="Beautiful Lily Bouquet" class="lily" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="lily" style="display:none; font-size: 6rem;">🌺</div>
+            <p style="font-size: 1.3rem; color: #333; margin: 20px 0;">One beautiful flower for one beautiful lady 💕</p>
+            <button class="open-btn" onclick="closeFlower()">Gülləri al 🌺</button>
+        </div>
+    </div>
+
+    <!-- Kiss Modal -->
+    <div class="kiss-modal" id="kissModal">
+        <div class="kiss-content">
+            <h2>💋 Öpücükk 💋</h2>
+            <div class="lips" id="lips">💋</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="kissProgress"></div>
+            </div>
+            <p id="kissText">Aşkım üçünn şirin öpücük(5 dənə) 🤗</p>
+            <button class="kiss-btn" onclick="giveKiss()" id="kissBtn">Öp 💋</button>
+        </div>
+    </div>
+
+    <!-- Hug Modal -->
+    <div class="hug-modal" id="hugModal">
+        <div class="hug-content">
+            <h2>🤗 Aşkımaa Möhkəmm qucaqq 🤗</h2>
+            <div class="hug-container">
+                <!-- Replace these with your actual photos -->
+                <img src="https://raw.githubusercontent.com/nazimkkk/business-card/refs/heads/main/card/negan.png" alt="Negan" class="hug-character left" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder-character left" style="display:none;"></div>
+                <img src="https://raw.githubusercontent.com/nazimkkk/business-card/refs/heads/main/card/cupcake.png" alt="Your Girlfriend" class="hug-character right" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="placeholder-character right" style="display:none;"></div>
+                <div class="hug-hearts">💕</div>
+            </div>
+            <p style="color: white; font-size: 1.2rem; margin: 20px 0;">Gözəlimə yumuşaq, rahat, isti qucaqq! 💕</p>
+            <button class="hug-btn" onclick="giveHug()">Səndə onu qucaqla 🤗</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        let croissantBites = 0;
+        let kissCount = 0;
+
+        function showLetter() {
+            document.getElementById('letterModal').style.display = 'flex';
+        }
+
+        function openLetter() {
+            document.getElementById('letterModal').style.display = 'none';
+            // If it's the final letter (step 5), call answerNo function
+            if (currentStep === 5) {
+                // Final letter - close and show congratulations
+                answerNo();
+                return;
+            }
+            document.getElementById('questionModal').style.display = 'flex';
+        }
+
+        function answerNo() {
+            document.getElementById('questionModal').style.display = 'none';
+            document.getElementById('congratsModal').style.display = 'flex';
+        }
+
+        function answerYes() {
+            document.getElementById('questionModal').style.display = 'none';
+            currentStep++;
+            
+            if (currentStep === 1) {
+                // Show croissant
+                document.getElementById('croissantModal').style.display = 'flex';
+            } else if (currentStep === 2) {
+                // Show flowers
+                document.getElementById('flowerModal').style.display = 'flex';
+            } else if (currentStep === 3) {
+                // Show hug (moved before kisses)
+                document.getElementById('hugModal').style.display = 'flex';
+            } else if (currentStep === 4) {
+                // Show kisses
+                resetKissCount();
+                document.getElementById('kissModal').style.display = 'flex';
+            } else if (currentStep === 5) {
+                // Show final letter - no more questions
+                document.getElementById('letterText').innerHTML = `
+                    Cupcakimə,<br><br>
+                    Aşkım yadında soruşmuşdun məndən, məni niyə sevirsən? Mən səni sən olduğun üçün sevirem, qulağa
+                    sadə gələ bilər ama mən sənin olduğun insanı çox sevirem, enerjik, mehriban, şirin, gözəl olan səni 
+                    sevirem. Ən çoxda ilişkimizi sevirem, rahat, sakit, qəşəng, saf olan ilişkimizi sevirəm. Bir-birimizin 
+                    yanında özümüz ola bilməyimizi, birlikdə gülüb əylənməyimizi, her gece yatmadan qabaq səni sevirem deyib 
+                    yatmağımızı, hər dəfə səni çox sevirəm yarışında sonda bərabərəə deyib bitirməyimizi, hər səhər evden 
+                    çıxmadan qabaq bir birimizə video atmaığımızı, birlikdə elediyimiz hər şeyi mən sevirem, çünki içində 
+                    sən varsan. Aramızda olan sevgi nadirdi, bir birini bu qədər çox seven iki insanın bir birin bu qədər 
+                    tez tapması  bəzi insanlar ömrün sonuna qədər bunu axtarır, eləsidə olur tapammadın bu dünyadan gedir.
+                    Mən səni tapmışam, nə olursa olsun həmişe sevəcəyim insanı və heç vaxt getmeyivə icazə vermiyecem. 
+                    Mən 2 il boyunca səni sevmişəm səndən xəbərsiz bilirsən niyə heç vaxt vazkeçməmişdim. Çünki səniynən 
+                    biryerde keçirəcəyim balaca 1 dəqiqə belə sənsiz keçirəcəyim bir ömürdən daha dəyərlidi. Sən mənim 
+                    aldığım ən dəyərli hədiyyəsən, Çox şanslıyam səniynən birlikdə olduğum üçün. İlk qucaqlaşmamız yadında 
+                    metroda əlimdə gülüynən, mən o anda anladımki bu dünyada bundan daha çox istədiyim heç nə yoxdu. Əgər 
+                    1 dəqiqəm qalsaydı soruşsaydılar son istəyin nədi o 1 dəqiqənin hamsın səni qucaqlıyaraq keçirmək istəyirəm.
+                    Bilirəm çox deyirəm, ama səni çox sevirəm aşkım, həmişədə sevəcəm. Sən mənim sevgilim, ən yaxın dostum, 
+                    soulmateimmənn. Nə olur olsun səni sevməkdən vazkeçməyəcəm. Sən mənim hərşeyimsənn. Səni hər şeydən 
+                    çox sevənn
+                    <br>
+                    Negan 💕
+                `;
+                document.getElementById('letterModal').style.display = 'flex';
+            }
+        }
+
+        function closeCongrats() {
+            document.getElementById('congratsModal').style.display = 'none';
+        }
+
+        function eatCroissant() {
+            croissantBites++;
+            const progress = (croissantBites / 4) * 100;
+            document.getElementById('croissantProgress').style.width = progress + '%';
+            
+            // Update croissant appearance based on bites
+            const croissant = document.getElementById('croissant');
+            croissant.className = 'croissant';
+            if (croissantBites >= 1) croissant.classList.add('bite-1');
+            if (croissantBites >= 2) croissant.classList.add('bite-2');
+            if (croissantBites >= 3) croissant.classList.add('bite-3');
+            if (croissantBites >= 4) croissant.classList.add('bite-4');
+            
+            if (croissantBites >= 4) {
+                document.getElementById('croissantText').textContent = 'Nuşş olsunn aşkımaa! Yedin qutardınn 🥐✨';
+                document.getElementById('eatBtn').textContent = 'Bitdi! 🎉';
+                document.getElementById('eatBtn').onclick = function() {
+                    document.getElementById('croissantModal').style.display = 'none';
+                    // Ask "Are you still upset?" directly after finishing croissant
+                    setTimeout(() => {
+                        document.getElementById('questionModal').style.display = 'flex';
+                    }, 500);
+                };
+            } else {
+                document.getElementById('croissantText').textContent = ` ${croissantBites}/4 - Bəh bəhh yeməyə davam elə! 🍽️`;
+            }
+        }
+
+        function closeFlower() {
+            document.getElementById('flowerModal').style.display = 'none';
+            // Ask "Are you still upset?" directly after accepting flowers
+            setTimeout(() => {
+                document.getElementById('questionModal').style.display = 'flex';
+            }, 500);
+        }
+
+        function giveKiss() {
+            kissCount++;
+            const progress = (kissCount / 5) * 100;
+            document.getElementById('kissProgress').style.width = progress + '%';
+            
+            // Add kissing animation
+            const lips = document.getElementById('lips');
+            lips.classList.add('kissing');
+            setTimeout(() => {
+                lips.classList.remove('kissing');
+            }, 800);
+            
+            if (kissCount >= 5) {
+                document.getElementById('kissText').textContent = 'Bütün öpücüklərii aldın! 💋💕';
+                document.getElementById('kissBtn').textContent = 'Bitdi! 💕';
+                document.getElementById('kissBtn').onclick = function() {
+                    document.getElementById('kissModal').style.display = 'none';
+                    // Ask "Are you still upset?" directly after finishing kisses
+                    setTimeout(() => {
+                        document.getElementById('questionModal').style.display = 'flex';
+                    }, 500);
+                };
+            } else {
+                document.getElementById('kissText').textContent = `Öpücük ${kissCount}/5 - Bir dənədəə! 💋`;
+            }
+        }
+
+        function giveHug() {
+            document.getElementById('hugModal').style.display = 'none';
+            // Ask "Are you still upset?" directly after hugging
+            setTimeout(() => {
+                document.getElementById('questionModal').style.display = 'flex';
+            }, 500);
+        }
+
+        // Reset kiss count when starting new kiss session
+        function resetKissCount() {
+            kissCount = 0;
+        }
+
+        // Add some sparkle effects
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'absolute';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.fontSize = '2rem';
+            sparkle.style.animation = 'float 3s ease-out forwards';
+            sparkle.style.pointerEvents = 'none';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        // Create sparkles periodically
+        setInterval(createSparkle, 2000);
+    </script>
+</body>
+</html>
